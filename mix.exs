@@ -9,7 +9,7 @@ defmodule Assignment.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
-      aliases: aliases(),
+      # aliases: aliases(),
       deps: deps()
     ]
   end
@@ -42,7 +42,9 @@ defmodule Assignment.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:absinthe, "~> 1.4"},
-      {:tesla, "~> 1.3"}
+      {:tesla, "~> 1.3"},
+      {:absinthe_plug, "~> 1.4"},
+      {:mock, "~> 0.3.3", only: :test}
     ]
   end
 
@@ -52,11 +54,11 @@ defmodule Assignment.MixProject do
   #     $ mix ecto.setup
   #
   # See the documentation for `Mix` for more info on aliases.
-  defp aliases do
-    [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
-    ]
-  end
+  # defp aliases do
+  #   [
+  #     "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+  #     "ecto.reset": ["ecto.drop", "ecto.setup"],
+  #     test: ["test"]
+  #   ]
+  # end
 end
